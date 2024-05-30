@@ -20,7 +20,7 @@ function ClientAccessApi() {
             const sections = data.map((obj) => obj.objectValue);
             return sections;
         }
-        await axios
+        token = await axios
         .post(
             'https://api.hbcreations.io/api/user/login',
             JSON.stringify({
