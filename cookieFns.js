@@ -1,12 +1,4 @@
 function cookieFns() {
-    const eatCookie = async () => {
-        try {
-            document.cookie = 'user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-            window.location.replace('/login');
-        } catch (err) {
-            console.error(err)
-        }
-    }
     const serveCookie = (cname) => {
         const name = cname + '=';
         const decodedCookie = decodeURIComponent(document.cookie);
@@ -24,7 +16,6 @@ function cookieFns() {
         return '';
     }
     return {
-        eatCookie,
         serveCookie,
     };
 }

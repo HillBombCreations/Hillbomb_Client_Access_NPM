@@ -3,7 +3,7 @@ import axios from "axios";
 function serviceCalls() {
     const getCollectionObjectsCall = async (collectionID, token) => {
         const { data } = await axios.get(
-            "https://cms.hbcreations.io/tenant/getCollectionObjects",
+            "https://cms.hbcreations.io/tenant/collectionObjects",
             {
                 params: { collectionID },
                 headers: { Authorization: token  },
