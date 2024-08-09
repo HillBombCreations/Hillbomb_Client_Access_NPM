@@ -18,10 +18,8 @@ function ClientAccessAPI() {
         try {
             res = await getCollectionObjectsCall(collectionID, token);
         } catch (err) {
-            if (err.response.status === 401) {
-                token = await getClientTokenCall(clientId, clientSecret);
-                res = await getCollectionObjectsCall(collectionID, token);
-            }
+            token = await getClientTokenCall(clientId, clientSecret);
+            res = await getCollectionObjectsCall(collectionID, token);
         }
         return res;
     };
