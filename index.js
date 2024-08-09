@@ -1,5 +1,5 @@
-import cookieFns from "./cookieFns";
-import serviceCalls from "./serviceCalls";
+import cookieFns from './cookieFns';
+import serviceCalls from './serviceCalls';
 
 function ClientAccessAPI() {
     const getCollectionObjects = async (collectionID, clientId, clientSecret) => {
@@ -7,7 +7,7 @@ function ClientAccessAPI() {
         const { serveCookie } = cookieFns();
 
         let token = null;
-        const tokenObj = serveCookie("token");
+        const tokenObj = serveCookie('token');
         if (tokenObj) token = JSON.parse(tokenObj);
 
         if (!token) {
