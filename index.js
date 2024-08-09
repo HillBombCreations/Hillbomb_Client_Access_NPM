@@ -13,7 +13,17 @@ function ClientAccessAPI() {
         if (!token) {
             token = await getClientTokenCall(clientId, clientSecret);
         }
-        return await getCollectionObjectsCall(collectionID, token);
+
+        let res;
+        try {
+            res = await getCollectionObjectsCall(collectionID, token);
+        } catch (err) {
+            if (err.response.status === 401) {
+                token = await getClientTokenCall(clientId, clientSecret);
+                res = await getCollectionObjectsCall(collectionID, token);
+            }
+        }
+        return res;
     };
     
     return {
