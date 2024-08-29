@@ -15,7 +15,7 @@ function serviceCalls() {
         const { data } = await axios.post(
             "https://api.hbcreations.io/api/user/login",
             JSON.stringify({
-                email: clientId,
+                username: clientId,
                 password: clientSecret
             }),
             {
