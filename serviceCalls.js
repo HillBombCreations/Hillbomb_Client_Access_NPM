@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 
 function serviceCalls() {
-    const getCollectionObjectsCall = async (collectionID, token) => {
+    const getCollectionObjectsCall = async (collectionID, key, token) => {
         const { data } = await axios.get(
-            "https://cms.hbcreations.io/tenant/collectionObjects",
+            'https://cms.hbcreations.io/tenant/collectionObjects',
             {
-                params: { collectionID },
+                params: { collectionID, key, archived: false },
                 headers: { Authorization: token  },
             }
         );
@@ -13,13 +13,13 @@ function serviceCalls() {
     }
     const getClientTokenCall = async (clientId, clientSecret) => {
         const { data } = await axios.post(
-            "https://api.hbcreations.io/api/user/login",
+            'https://api.hbcreations.io/api/user/login',
             JSON.stringify({
                 username: clientId,
                 password: clientSecret
             }),
             {
-                headers: { "Content-Type": "application/json" },
+                headers: { 'Content-Type': 'application/json' },
             }
         );
 
