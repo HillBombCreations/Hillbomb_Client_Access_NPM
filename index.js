@@ -2,7 +2,7 @@ import cookieFns from './cookieFns';
 import serviceCalls from './serviceCalls';
 
 function ClientAccessAPI() {
-    const getCollectionObjects = async (collectionID, clientId, clientSecret) => {
+    const getCollectionObjects = async (collectionID, key, clientId, clientSecret) => {
         const { getCollectionObjectsCall, getClientTokenCall } = serviceCalls();
         const { serveCookie } = cookieFns();
 
@@ -16,10 +16,10 @@ function ClientAccessAPI() {
 
         let res;
         try {
-            res = await getCollectionObjectsCall(collectionID, token);
+            res = await getCollectionObjectsCall(collectionID, key, token);
         } catch (err) {
             token = await getClientTokenCall(clientId, clientSecret);
-            res = await getCollectionObjectsCall(collectionID, token);
+            res = await getCollectionObjectsCall(collectionID, key, token);
         }
         return res;
     };
