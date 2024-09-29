@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 function serviceCalls() {
     const getCollectionObjectsCall = async (groupName, key, contentType) => {
