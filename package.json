@@ -1,6 +1,6 @@
 {
   "name": "hillbomb_client_access_npm",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "npm package for access hillbomb cms api",
   "main": "index.js",
   "scripts": {

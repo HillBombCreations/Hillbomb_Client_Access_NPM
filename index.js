@@ -2,7 +2,7 @@ import cookieFns from './cookieFns';
 import serviceCalls from './serviceCalls';
 
 function ClientAccessAPI() {
-    const getCollectionObjects = async (groupName, key, contentType) => {
+    const getCollectionObjects = async ({ groupName, key, contentType }) => {
         const { getCollectionObjectsCall } = serviceCalls();
 
         let res;
